@@ -76,12 +76,15 @@
         
         .video-container {
             position: relative;
-            padding-bottom: 56.25%;
+            padding-bottom: 177.77%;
             height: 0;
             overflow: hidden;
             border-radius: 8px;
             margin: 20px 0;
             border: 3px solid #c62828;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .video-container iframe {
@@ -90,6 +93,14 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+        
+        .video-note {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-style: italic;
         }
         
         .greeting {
@@ -219,6 +230,25 @@
             .crossword-grid {
                 grid-template-columns: repeat(5, 1fr);
             }
+            
+            .video-container {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .congrats-btn {
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -236,12 +266,14 @@
                 <p>Праздничное видео с рождественскими колядками и мелодиями, созданное искусственным интеллектом.</p>
                 
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    <iframe src="https://www.youtube.com/embed/fet7ehE7HR4?si=NnC7WsgiqsBplprs" 
                             title="Рождественская колядка 2026" 
                             frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                     </iframe>
                 </div>
+                <p class="video-note">Вертикальное видео - оптимально для просмотра на мобильных устройствах</p>
                 
                 <p style="text-align: center; margin-top: 10px;">
                     Пусть эта музыка создаст праздничное настроение!
@@ -270,7 +302,7 @@
                     <div class="crossword">
                         <h3 style="color: #c62828;">Новогодний кроссворд (Русский)</h3>
                         <div class="crossword-grid" id="russian-crossword">
-
+                  
                         </div>
                         
                         <div class="clues">
@@ -293,7 +325,7 @@
                     <div class="crossword">
                         <h3 style="color: #c62828;">Christmas Crossword (English)</h3>
                         <div class="crossword-grid" id="english-crossword">
-                            <!-- Английский кроссворд -->
+      
                         </div>
                         
                         <div class="clues">
@@ -327,6 +359,9 @@
                 <p style="font-size: 1.4rem; color: #c62828; margin-top: 20px; font-weight: bold;">
                     Счастья, мира и добра в 2026 году!
                 </p>
+                <div style="margin-top: 20px; font-size: 1.5rem;">
+                    ❄️🎄🎅🎁✨
+                </div>
             </div>
         </main>
         
@@ -334,9 +369,8 @@
             <p>© 2026 Рождественская колядка. Создано с помощью HTML и CSS.</p>
         </footer>
     </div>
-
     <script>
-
+  
         function createRussianCrossword() {
             const grid = document.getElementById('russian-crossword');
             const letters = ['Н','О','В','Ы','Й',' ','С','Н','Е','Г',' ',' ',' ','М',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '];
@@ -344,7 +378,6 @@
 
             grid.innerHTML = '';
             
-
             for (let i = 0; i < 25; i++) {
                 const cell = document.createElement('div');
                 cell.className = 'cell';
@@ -363,14 +396,11 @@
             }
         }
         
-
         function createEnglishCrossword() {
             const grid = document.getElementById('english-crossword');
             const letters = ['S','A','N','T','A',' ','C','H','R','I','S','T',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '];
-
-            grid.innerHTML = '';
             
-
+            grid.innerHTML = '';
             for (let i = 0; i < 25; i++) {
                 const cell = document.createElement('div');
                 cell.className = 'cell';
@@ -388,7 +418,6 @@
             }
         }
         
-
         function showSurprise() {
             const message = document.getElementById('surpriseMessage');
             const button = document.querySelector('.congrats-btn');
@@ -396,20 +425,16 @@
             message.style.display = 'block';
             button.style.display = 'none';
             
-            // Плавное появление
             message.style.opacity = '0';
             setTimeout(() => {
                 message.style.transition = 'opacity 0.5s ease';
                 message.style.opacity = '1';
             }, 10);
-            
-
             createSimpleEffect();
         }
         
-
         function createSimpleEffect() {
-
+  
             for (let i = 0; i < 10; i++) {
                 setTimeout(() => {
                     const effect = document.createElement('div');
@@ -423,7 +448,6 @@
                     
                     document.body.appendChild(effect);
                     
-   
                     const animation = effect.animate([
                         { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
                         { transform: `translateY(${window.innerHeight}px) rotate(180deg)`, opacity: 0 }
@@ -432,25 +456,19 @@
                         easing: 'linear'
                     });
                     
-
                     animation.onfinish = () => effect.remove();
                 }, i * 200);
             }
         }
-        
-
         document.addEventListener('DOMContentLoaded', function() {
             createRussianCrossword();
             createEnglishCrossword();
-            
-
+        
             const currentYear = new Date().getFullYear();
             const footer = document.querySelector('footer p');
             if (footer) {
                 footer.textContent = footer.textContent.replace('2026', currentYear);
             }
-            
-            // Добавляем интерактивность ячейкам кроссворда
             document.querySelectorAll('.cell').forEach(cell => {
                 if (!cell.classList.contains('black')) {
                     cell.addEventListener('click', function() {
