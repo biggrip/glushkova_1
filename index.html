@@ -42,7 +42,7 @@
             transform: rotate(15deg);
         }
 
-        /* Заголовки как в образце bitblondi */
+        /* Заголовки */
         h2 {
             color: #2d3748;
             font-size: 1.6rem;
@@ -85,7 +85,7 @@
             color: #4a5568;
         }
 
-        /* Красивое окно для реального видео */
+        /* Видео контейнер */
         .video-container {
             margin: 25px 0;
             border-radius: 12px;
@@ -151,71 +151,173 @@
             border-radius: 6px;
         }
 
-        /* Стили для кроссворда из предыдущей работы */
+        /* НОВЫЙ РАЗДЕЛ: Новогодние развлечения как на скринах */
+        .entertainment-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #e2e8f0;
+            border-left: 5px solid #e53e3e;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .entertainment-section h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px dashed #cbd5e0;
+            padding-bottom: 15px;
+        }
+
+        .entertainment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .entertainment-card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .entertainment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-color: #4299e1;
+        }
+
+        .entertainment-card h4 {
+            color: #2d3748;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .entertainment-card p {
+            color: #718096;
+            font-size: 0.95rem;
+            margin: 10px 0;
+        }
+
+        .flag {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Кроссворд как на скринах */
         .crossword-section {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            background: #ffffff;
             border-radius: 12px;
             padding: 25px;
             margin: 25px 0;
             border: 2px solid #e2e8f0;
-            border-left: 5px solid #48bb78;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .crossword-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 4px;
-            margin: 20px auto;
-            max-width: 280px;
-            background: white;
-            padding: 12px;
-            border-radius: 8px;
-            border: 2px solid #cbd5e0;
-        }
-
-        .crossword-cell {
-            aspect-ratio: 1;
-            background: white;
-            border: 2px solid #a0aec0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
+        .crossword-section h4 {
             color: #2d3748;
-            cursor: pointer;
-            transition: all 0.2s;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
         }
 
-        .crossword-cell:hover {
-            background: #ebf8ff;
-            transform: scale(1.05);
-        }
-
-        .crossword-cell.black {
-            background: #4a5568;
-            border-color: #2d3748;
-        }
-
-        .crossword-clues {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+        .crossword-questions {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
             border: 1px solid #e2e8f0;
         }
 
-        .clue-list {
-            columns: 2;
-            column-gap: 40px;
+        .question-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e0;
         }
 
-        .clue-list li {
-            margin-bottom: 10px;
-            break-inside: avoid;
+        .question-item:last-child {
+            border-bottom: none;
         }
 
-        /* Праздничные ссылки в стиле bitblondi */
+        .question-number {
+            display: inline-block;
+            background: #4299e1;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .question-text {
+            color: #4a5568;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .question-hint {
+            color: #718096;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .crossword-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .action-btn {
+            background: #48bb78;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+            color: #3182ce;
+        }
+
+        /* Праздничные ссылки */
         .holiday-link {
             display: inline-flex;
             align-items: center;
@@ -243,7 +345,7 @@
             font-size: 1.2em;
         }
 
-        /* Цитата как в bitblondi */
+        /* Цитата */
         blockquote {
             border-left: 4px solid #48bb78;
             padding: 20px 25px;
@@ -266,7 +368,7 @@
             opacity: 0.3;
         }
 
-        /* Контактная информация как в образце */
+        /* Контактная информация */
         .contact {
             margin-top: 40px;
             padding-top: 25px;
@@ -288,7 +390,7 @@
             color: #2d3748;
         }
 
-        /* Снежинки для атмосферы */
+        /* Снежинки */
         .snowflake {
             position: fixed;
             color: #4299e1;
@@ -305,7 +407,7 @@
             }
         }
 
-        /* Адаптивность для телефонов */
+        /* Адаптивность */
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -324,12 +426,24 @@
                 font-size: 1.2rem;
             }
             
-            .crossword-grid {
-                max-width: 250px;
+            .entertainment-grid {
+                grid-template-columns: 1fr;
             }
             
-            .clue-list {
-                columns: 1;
+            .crossword-actions {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
             }
             
             .video-controls {
@@ -345,18 +459,6 @@
             .holiday-link {
                 padding: 10px 20px;
                 width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .video-controls {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .video-btn {
-                width: 90%;
                 justify-content: center;
             }
         }
@@ -382,43 +484,24 @@
                 color: #cbd5e1;
             }
             
-            .date {
-                background: #334155;
-                color: #94a3b8;
-                border-color: #60a5fa;
-            }
-            
+            .entertainment-section,
             .crossword-section {
-                background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+                background: #2d3748;
                 border-color: #475569;
             }
             
-            .crossword-cell {
-                background: #475569;
-                border-color: #94a3b8;
-                color: #f1f5f9;
+            .entertainment-card,
+            .crossword-questions {
+                background: #374151;
+                border-color: #4b5563;
             }
             
-            .crossword-cell:hover {
-                background: #4f6a8a;
+            .question-text {
+                color: #d1d5db;
             }
             
-            .crossword-cell.black {
-                background: #0f172a;
-            }
-            
-            .video-controls {
-                background: rgba(0, 0, 0, 0.8);
-            }
-            
-            .holiday-link {
-                background: linear-gradient(135deg, #60a5fa 0%, #818cf8 100%);
-            }
-            
-            blockquote {
-                background: #1e3a1e;
-                color: #bbf7d0;
-                border-color: #4ade80;
+            .nav-link {
+                color: #60a5fa;
             }
         }
     </style>
@@ -428,16 +511,15 @@
     <div id="snowflakes"></div>
     
     <div class="container">
-        <!-- Главный заголовок как в bitblondi -->
+        <!-- Главный заголовок -->
         <h2><span class="emoji-heading">🎅</span> 23 декабря, 2025</h2>
         
         <h3><span class="emoji-heading">🎄</span> Рождественская колядка 2026</h3>
         <p>🎶 Слушайте, радуйтесь, делитесь с близкими! Пусть эта колядка принесёт в ваш дом тепло и радость!</p>
         
-        <!-- Окно с РЕАЛЬНЫМ видео из файла Новый год.MP4 -->
+        <!-- Видео -->
         <div class="video-container">
             <video id="newYearVideo" preload="metadata" controls>
-                <!-- ⚠️ ВАЖНО: Убедитесь, что файл "Новый год.MP4" загружен в ваш репозиторий -->
                 <source src="Новый год.MP4" type="video/mp4">
                 Ваш браузер не поддерживает видео. 
                 <a href="Новый год.MP4" download>Скачайте его по ссылке</a>.
@@ -461,7 +543,7 @@
         
         <p>Поздравляю с наступающим Рождеством 2026! 🎄</p>
         
-        <!-- Поздравление с Новым годом как в bitblondi -->
+        <!-- Поздравление с Новым годом -->
         <h2><span class="emoji-heading">📅</span> 10 октября, 2025</h2>
         
         <h3><span class="emoji-heading">🎁</span> Поздравление с Наступающим 2026 годом</h3>
@@ -471,52 +553,134 @@
             <span>🎁</span> Открыть поздравление 👈
         </button>
         
-        <!-- Раздел с кроссвордом из предыдущей работы -->
-        <h2><span class="emoji-heading">📅</span> 15 октября, 2025</h2>
-        
-        <h3><span class="emoji-heading">✏️</span> Новогодние кроссворды</h3>
-        <p>Я сделала Новогодние кроссворды для сайта 👫 сайта моего друга</p>
-        
-        <div class="crossword-section">
-            <h4 style="color: #2d3748; margin-bottom: 15px;">🎯 Новогодний кроссворд (Русский)</h4>
-            <div class="crossword-grid" id="russian-crossword">
-                <!-- Кроссворд будет создан JavaScript -->
-            </div>
-            
-            <div class="crossword-clues">
-                <h5 style="color: #4a5568;">По горизонтали:</h5>
-                <ol class="clue-list">
-                    <li>Главный зимний праздник (8 букв)</li>
-                    <li>Снежная фигура во дворе (8 букв)</li>
-                    <li>Новогодний напиток (7 букв)</li>
-                    <li>Блестящая нить для украшения ёлки (4 буквы)</li>
-                    <li>Зимнее транспортное средство (5 букв)</li>
-                </ol>
+        <!-- НОВЫЙ РАЗДЕЛ: Новогодние развлечения как на скринах -->
+        <div class="entertainment-section">
+            <h3>🎯 Новогодние развлечения</h3>
+            <div class="entertainment-grid">
+                <div class="entertainment-card" onclick="openRussianCrossword()">
+                    <div class="flag">🇷🇺</div>
+                    <h4>Русский кроссворд</h4>
+                    <p>Решите праздничный кроссворд на русском языке</p>
+                </div>
                 
-                <h5 style="color: #4a5568; margin-top: 20px;">По вертикали:</h5>
-                <ol class="clue-list" start="6">
-                    <li>Подарок под ёлкой (6 букв)</li>
-                    <li>Сказочный дед с мешком (5 букв)</li>
-                    <li>Новогодний фейерверк (5 букв)</li>
-                    <li>Праздничный залп в полночь (5 букв)</li>
-                    <li>Зимнее развлечение детей (6 букв)</li>
-                </ol>
-            </div>
-            
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="holiday-link" onclick="checkCrossword()" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
-                    <span>✓</span> Проверить ответы
-                </button>
+                <div class="entertainment-card" onclick="openEnglishCrossword()">
+                    <div class="flag">🇬🇧</div>
+                    <h4>English Crossword</h4>
+                    <p>New Year crossword in English</p>
+                </div>
+                
+                <div class="entertainment-card" onclick="showNewYearGreeting()">
+                    <div class="flag">🎉</div>
+                    <h4>Поздравление</h4>
+                    <p>Открыть праздничное поздравление</p>
+                </div>
             </div>
         </div>
         
+        <!-- Русский кроссворд (по умолчанию скрыт) -->
+        <div class="crossword-section" id="russianCrossword" style="display: none;">
+            <h4>🇷🇺 Русский новогодний кроссворд</h4>
+            
+            <div class="crossword-questions">
+                <div class="question-item">
+                    <span class="question-number">1</span>
+                    <p class="question-text">Зелёная красавица в гостиной</p>
+                    <p class="question-hint">4 буквы</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">2</span>
+                    <p class="question-text">Что дети ждут под ёлкой?</p>
+                    <p class="question-hint">5 букв</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">3</span>
+                    <p class="question-text">Зимняя спутница Деда Мороза</p>
+                    <p class="question-hint">8 букв</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">4</span>
+                    <p class="question-text">Новогодний взрывной сюрприз</p>
+                    <p class="question-hint">7 букв</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">5</span>
+                    <p class="question-text">Блестящее украшение на ветках</p>
+                    <p class="question-hint">6 букв</p>
+                </div>
+            </div>
+            
+            <div class="crossword-actions">
+                <button class="action-btn" onclick="showCrosswordAnswers()">
+                    <span>🔍</span> Показать ответы
+                </button>
+                
+                <div class="nav-links">
+                    <a href="#" class="nav-link" onclick="backToGreetings()">← вернуться к поздравлениям</a>
+                    <a href="#" class="nav-link" onclick="goToMainPage()">Выйти на главную страницу</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Английский кроссворд (по умолчанию скрыт) -->
+        <div class="crossword-section" id="englishCrossword" style="display: none;">
+            <h4>🇬🇧 English New Year Crossword</h4>
+            
+            <div class="crossword-questions">
+                <div class="question-item">
+                    <span class="question-number">1</span>
+                    <p class="question-text">Green beauty in the living room</p>
+                    <p class="question-hint">4 letters</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">2</span>
+                    <p class="question-text">What children expect under the tree?</p>
+                    <p class="question-hint">5 letters</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">3</span>
+                    <p class="question-text">Santa's winter companion</p>
+                    <p class="question-hint">8 letters</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">4</span>
+                    <p class="question-text">New Year explosive surprise</p>
+                    <p class="question-hint">7 letters</p>
+                </div>
+                
+                <div class="question-item">
+                    <span class="question-number">5</span>
+                    <p class="question-text">Shiny decoration on branches</p>
+                    <p class="question-hint">6 letters</p>
+                </div>
+            </div>
+            
+            <div class="crossword-actions">
+                <button class="action-btn" onclick="showEnglishAnswers()">
+                    <span>🔍</span> Show Answers
+                </button>
+                
+                <div class="nav-links">
+                    <a href="#" class="nav-link" onclick="backToGreetings()">← back to greetings</a>
+                    <a href="#" class="nav-link" onclick="goToMainPage()">Go to main page</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Кнопка для просмотра кроссвордов (старая версия) -->
         <p style="text-align: center; margin-top: 20px;">
-            <button class="holiday-link" onclick="showMoreCrosswords()">
+            <button class="holiday-link" onclick="openRussianCrossword()">
                 <span>📝</span> Посмотреть готовые кроссворды 👈
             </button>
         </p>
         
-        <!-- Цитата как в bitblondi -->
+        <!-- Цитата -->
         <h2><span class="emoji-heading">📅</span> 1 сентября, 2025</h2>
         
         <h3><span class="emoji-heading">💡</span> Начало пути в веб-разработку</h3>
@@ -527,7 +691,7 @@
             — Лао Цзы
         </blockquote>
         
-        <!-- Контактная информация как в bitblondi -->
+        <!-- Контактная информация -->
         <div class="contact">
             <p><strong>13 января 2026 года</strong></p>
             <p>Мой сайт: <strong id="site-url">ваш-сайт.github.io</strong></p>
@@ -538,7 +702,7 @@
     </div>
 
     <script>
-        // Создаем снежинки
+        // Снежинки
         function createSnowflakes() {
             const container = document.getElementById('snowflakes');
             const flakes = ['❄️', '🎄', '⭐', '🎁', '✨'];
@@ -553,42 +717,6 @@
                 flake.style.animationDelay = Math.random() * 5 + 's';
                 flake.style.opacity = Math.random() * 0.5 + 0.3;
                 container.appendChild(flake);
-            }
-        }
-        
-        // Создаем кроссворд
-        function createCrossword() {
-            const grid = document.getElementById('russian-crossword');
-            const letters = [
-                'Н','О','В','Ы','Й',
-                ' ','С','Н','Е','Г',
-                ' ',' ',' ','М',' ',
-                ' ',' ',' ',' ',' ',
-                ' ',' ',' ',' ',' '
-            ];
-            
-            grid.innerHTML = '';
-            
-            const numbers = {
-                0: 1, 6: 2, 13: 4,
-                1: 6, 2: 7, 3: 8,
-                4: 9, 9: 10
-            };
-            
-            for (let i = 0; i < 25; i++) {
-                const cell = document.createElement('div');
-                cell.className = 'crossword-cell';
-                
-                if (letters[i] && letters[i] !== ' ') {
-                    cell.textContent = letters[i];
-                    if (numbers[i]) {
-                        cell.dataset.number = numbers[i];
-                    }
-                } else if (letters[i] === ' ') {
-                    cell.classList.add('black');
-                }
-                
-                grid.appendChild(cell);
             }
         }
         
@@ -637,18 +765,44 @@
             }
         }
         
-        // Функции для кнопок
+        // Функции для кроссвордов
+        function openRussianCrossword() {
+            document.getElementById('russianCrossword').style.display = 'block';
+            document.getElementById('englishCrossword').style.display = 'none';
+            document.querySelector('.entertainment-section').style.display = 'none';
+            window.scrollTo(0, document.getElementById('russianCrossword').offsetTop - 20);
+        }
+        
+        function openEnglishCrossword() {
+            document.getElementById('englishCrossword').style.display = 'block';
+            document.getElementById('russianCrossword').style.display = 'none';
+            document.querySelector('.entertainment-section').style.display = 'none';
+            window.scrollTo(0, document.getElementById('englishCrossword').offsetTop - 20);
+        }
+        
+        function backToGreetings() {
+            document.getElementById('russianCrossword').style.display = 'none';
+            document.getElementById('englishCrossword').style.display = 'none';
+            document.querySelector('.entertainment-section').style.display = 'block';
+            window.scrollTo(0, document.querySelector('.entertainment-section').offsetTop - 20);
+        }
+        
+        function goToMainPage() {
+            window.scrollTo(0, 0);
+        }
+        
+        function showCrosswordAnswers() {
+            alert('🔍 Ответы на русский кроссворд:\n\n1. ЕЛЬ (4 буквы)\n2. ПОДАРОК (5 букв)\n3. СНЕГУРОЧКА (8 букв)\n4. ФЕЙЕРВЕРК (7 букв)\n5. ГИРЛЯНДА (6 букв)\n\n🎉 Отличная работа!');
+        }
+        
+        function showEnglishAnswers() {
+            alert('🔍 English Crossword Answers:\n\n1. TREE (4 letters)\n2. GIFT (5 letters)\n3. SNOWMAIDEN (8 letters)\n4. FIREWORK (7 letters)\n5. TINSEL (6 letters)\n\n🎉 Well done!');
+        }
+        
+        // Другие функции
         function showNewYearGreeting() {
             const year = new Date().getFullYear() + 1;
             alert(`🎉 С НАСТУПАЮЩИМ ${year} ГОДОМ! 🎉\n\nПусть новый год принесёт:\n• Здоровье и счастье\n• Успех во всех начинаниях\n• Мир и благополучие\n• Исполнение заветных желаний!\n\nС праздником! 🎄🎁✨`);
-        }
-        
-        function checkCrossword() {
-            alert('🎯 Проверка кроссворда\n\nПравильные ответы:\n1. НОВЫЙГОД\n2. СНЕГОВИК\n3. МАНДАРИН\n4. ГИРЛЯНДА\n5. САНИ\n6. ПОДАРОК\n7. ДЕДМОРОЗ\n8. ФЕЙЕРВЕРК\n9. САЛЮТ\n10. ГОРКА\n\nОтличная работа! ✨');
-        }
-        
-        function showMoreCrosswords() {
-            alert('📚 Больше кроссвордов\n\nЗдесь будут появляться новые кроссворды на новогоднюю и рождественскую тематику.\nСледите за обновлениями! 🎄');
         }
         
         function showContactForm() {
@@ -658,21 +812,10 @@
         // Инициализация
         document.addEventListener('DOMContentLoaded', () => {
             createSnowflakes();
-            createCrossword();
             
             // Показываем актуальный URL
             const url = window.location.hostname + window.location.pathname;
             document.getElementById('site-url').textContent = url;
-            
-            // Интерактивность для ячеек кроссворда
-            document.querySelectorAll('.crossword-cell').forEach(cell => {
-                if (!cell.classList.contains('black')) {
-                    cell.addEventListener('click', function() {
-                        this.style.background = '#4299e1';
-                        this.style.color = 'white';
-                    });
-                }
-            });
             
             // Для мобильных: всегда показываем кнопки видео
             if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
