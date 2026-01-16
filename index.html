@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎄 Рождественская колядка 2026</title>
+    <title>🎄 Рождественская колядка 2026 🎄</title>
     <style>
         * {
             margin: 0;
@@ -13,406 +13,367 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: #1a472a;
-            background: linear-gradient(135deg, #0d2818 0%, #1a472a 50%, #2e6234 100%);
-            padding: 15px;
-            min-height: 100vh;
+            line-height: 1.7;
+            color: #2d3748;
+            background-color: #f7fafc;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            max-width: 800px;
-            margin: 0 auto;
-            border: 3px solid #c62828;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
         }
 
-        .container::before {
-            content: '❄️🎄';
-            position: absolute;
-            font-size: 40px;
-            opacity: 0.1;
-            top: 10px;
-            right: 10px;
-            transform: rotate(15deg);
-        }
-
+        /* Заголовки как в образце */
         h2 {
-            color: #c62828;
+            color: #2d3748;
             font-size: 1.5rem;
-            margin: 25px 0 10px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #ffd700;
-            display: flex;
-            align-items: center;
+            margin: 28px 0 12px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 600;
         }
 
         h2:first-child {
             margin-top: 0;
         }
 
-        h2 span {
-            margin-right: 10px;
-            font-size: 1.3em;
-        }
-
         h3 {
-            color: #1a472a;
-            font-size: 1.2rem;
-            margin: 15px 0 8px 0;
-            display: flex;
-            align-items: center;
+            color: #4a5568;
+            font-size: 1.25rem;
+            margin: 22px 0 10px 0;
+            font-weight: 600;
         }
 
-        h3 span {
+        .emoji-heading {
+            font-size: 1.1em;
             margin-right: 8px;
         }
 
-        .date {
-            color: #666;
-            font-size: 0.9rem;
-            display: block;
-            margin: 5px 0 15px 0;
-            background: #f0f8f0;
-            padding: 5px 10px;
-            border-radius: 5px;
-            border-left: 3px solid #c62828;
+        /* Окно для виртуального видео */
+        .virtual-video {
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            padding-top: 56.25%; /* 16:9 соотношение */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #4299e1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
+        .video-placeholder {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder .video-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .video-placeholder h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .video-placeholder p {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 400px;
+            line-height: 1.5;
+        }
+
+        /* Блок кроссворда */
+        .crossword-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #48bb78;
+        }
+
+        .crossword-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+            margin: 20px 0;
+            max-width: 300px;
+        }
+
+        .crossword-cell {
+            aspect-ratio: 1;
+            background: white;
+            border: 2px solid #4299e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #2d3748;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .crossword-cell:hover {
+            background-color: #ebf8ff;
+            transform: scale(1.05);
+        }
+
+        .crossword-cell.black {
+            background-color: #2d3748;
+            border-color: #1a202c;
+        }
+
+        .crossword-cell.numbered {
+            position: relative;
+        }
+
+        .crossword-cell.numbered::before {
+            content: attr(data-number);
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            font-size: 0.7rem;
+            color: #e53e3e;
+            font-weight: bold;
+        }
+
+        .crossword-clues {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .clue-list {
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .clue-list li {
+            margin-bottom: 10px;
+            break-inside: avoid;
+        }
+
+        /* Остальные стили */
         p {
             margin: 12px 0;
             font-size: 1rem;
         }
 
-        /* Видео контейнер */
-        .video-container {
-            margin: 20px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #000;
-            position: relative;
-            padding-top: 56.25%; /* 16:9 */
-            border: 3px solid #ffd700;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .video-controls {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(198, 40, 40, 0.9);
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .video-btn {
-            background: #ffd700;
-            color: #c62828;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.3s;
-        }
-
-        .video-btn:hover {
-            background: #ffed4e;
-            transform: translateY(-2px);
-        }
-
-        .video-note {
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-            margin-top: 8px;
-            font-style: italic;
-            background: #fff8e1;
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px dashed #ffd700;
-        }
-
-        /* Новогодние ссылки */
-        .holiday-link {
-            display: inline-flex;
-            align-items: center;
-            margin: 10px 0;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #c62828, #ff6f61);
-            color: white;
+        a {
+            color: #3182ce;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            border: 2px solid #ffd700;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(198, 40, 40, 0.3);
+            font-weight: 500;
         }
 
-        .holiday-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(198, 40, 40, 0.4);
-            background: linear-gradient(135deg, #ff6f61, #c62828);
+        a:hover {
+            text-decoration: underline;
         }
 
-        .holiday-link span {
-            margin-right: 8px;
-            font-size: 1.2em;
-        }
-
-        /* Цитата */
         blockquote {
-            border-left: 4px solid #ffd700;
-            padding: 15px 20px;
+            border-left: 4px solid #e2e8f0;
+            padding-left: 16px;
             margin: 20px 0;
-            background: #f9f5e7;
-            border-radius: 0 10px 10px 0;
+            color: #718096;
             font-style: italic;
-            color: #5d4037;
-            position: relative;
         }
 
-        blockquote::before {
-            content: '"';
-            font-size: 3rem;
-            color: #ffd700;
-            position: absolute;
-            left: 10px;
-            top: -10px;
-            opacity: 0.3;
-        }
-
-        /* Контактная информация */
         .contact {
-            margin-top: 30px;
+            margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px dashed #c62828;
-            text-align: center;
-            background: #f9f5e7;
-            padding: 20px;
-            border-radius: 10px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.95rem;
         }
 
-        .contact p {
-            margin: 8px 0;
-            color: #5d4037;
+        .action-link {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 16px;
+            background-color: #edf2f7;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
         }
 
-        .contact strong {
-            color: #c62828;
+        .action-link:hover {
+            background-color: #e2e8f0;
+            text-decoration: none;
         }
 
-        /* Снежинки */
-        .snowflake {
-            position: fixed;
-            color: white;
-            font-size: 1.2rem;
-            opacity: 0.8;
-            z-index: -1;
-            pointer-events: none;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        /* Адаптивность для телефонов */
+        /* Адаптивность */
         @media (max-width: 600px) {
             body {
-                padding: 10px;
+                padding: 15px;
             }
             
             .container {
                 padding: 20px;
-                border-radius: 12px;
             }
             
-            h2 {
-                font-size: 1.3rem;
+            .clue-list {
+                columns: 1;
             }
             
-            h3 {
-                font-size: 1.1rem;
+            .crossword-grid {
+                max-width: 250px;
+                margin: 20px auto;
             }
             
-            .video-container {
+            .virtual-video {
                 margin: 15px 0;
             }
-            
-            .video-controls {
-                padding: 8px;
-                gap: 5px;
-            }
-            
-            .video-btn {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-            
-            .holiday-link {
-                padding: 8px 16px;
-                font-size: 14px;
-                width: 100%;
-                justify-content: center;
-            }
         }
 
-        @media (max-width: 400px) {
-            .container {
-                padding: 15px;
-            }
-            
-            h2 {
-                font-size: 1.2rem;
-            }
-            
-            .video-controls {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .video-btn {
-                width: 90%;
-                justify-content: center;
-            }
-        }
-
-        /* Темная тема */
         @media (prefers-color-scheme: dark) {
             body {
-                background: linear-gradient(135deg, #0a1f14 0%, #153020 50%, #1e4528 100%);
-                color: #e8f5e9;
+                background-color: #1a202c;
+                color: #e2e8f0;
             }
             
             .container {
-                background: rgba(30, 30, 30, 0.95);
-                color: #e8f5e9;
-                border-color: #ff6b6b;
+                background-color: #2d3748;
+                border-color: #4a5568;
             }
             
             h2, h3 {
-                color: #ff6b6b;
+                color: #e2e8f0;
+                border-color: #4a5568;
             }
             
-            .date {
-                background: #2d2d2d;
-                color: #b0b0b0;
-                border-color: #ff6b6b;
+            .crossword-section {
+                background-color: #4a5568;
             }
             
-            p {
-                color: #e0e0e0;
+            .crossword-cell {
+                background-color: #718096;
+                border-color: #4299e1;
+                color: #e2e8f0;
             }
             
-            .video-controls {
-                background: rgba(255, 107, 107, 0.9);
+            .crossword-cell:hover {
+                background-color: #4a5568;
             }
             
-            .video-btn {
-                background: #ffd700;
-                color: #c62828;
+            .crossword-cell.black {
+                background-color: #1a202c;
             }
             
-            .video-note {
-                background: #2d2d2d;
-                color: #b0b0b0;
-                border-color: #ff6b6b;
-            }
-            
-            .holiday-link {
-                background: linear-gradient(135deg, #ff6b6b, #ff8e7a);
-            }
-            
-            blockquote {
-                background: #2d2d2d;
-                color: #e0e0e0;
-                border-color: #ffd700;
-            }
-            
-            .contact {
-                background: #2d2d2d;
-                border-color: #ff6b6b;
-            }
-            
-            .contact p {
-                color: #e0e0e0;
+            .crossword-clues {
+                background-color: #4a5568;
+                border-color: #718096;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Снежинки -->
-    <div id="snowflakes"></div>
-    
     <div class="container">
-        <h2><span>🎅</span> 23 декабря, 2025</h2>
+        <!-- Заголовок как в образце -->
+        <h2><span class="emoji-heading">🎅</span> 23 декабря, 2025</h2>
         
-        <h3><span>🎄</span> Рождественская колядка 2026</h3>
+        <h3><span class="emoji-heading">🎄</span> Рождественская колядка 2026</h3>
         <p>🎶 Слушайте, радуйтесь, делитесь с близкими! Пусть эта колядка принесёт в ваш дом тепло и радость!</p>
         
-        <!-- Видео блок -->
-        <div class="video-container">
-            <video id="newYearVideo" preload="metadata" poster="">
-                <source src="Новый год.MP4" type="video/mp4">
-                Ваш браузер не поддерживает видео. Скачайте его <a href="Новый год.MP4" download>по ссылке</a>.
-            </video>
-            <div class="video-controls">
-                <button class="video-btn" onclick="playPauseVideo()">▶️ Воспроизвести</button>
-                <button class="video-btn" onclick="toggleMute()">🔊 Звук</button>
-                <button class="video-btn" onclick="toggleFullscreen()">⛶ Полный экран</button>
-                <button class="video-btn" onclick="restartVideo()">↻ Заново</button>
+        <!-- Исправленное окно для виртуального видео -->
+        <div class="virtual-video">
+            <div class="video-placeholder">
+                <div class="video-icon">🎬</div>
+                <h4>Рождественская колядка 2026</h4>
+                <p>Здесь будет размещено праздничное видео с рождественскими колядками и мелодиями, созданное искусственным интеллектом.</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                    Видео будет доступно в ближайшее время
+                </p>
             </div>
         </div>
-        <p class="video-note">Нажмите кнопку "Воспроизвести" для запуска праздничного видео</p>
         
         <p>Поздравляю с наступающим Рождеством 2026! 🎄</p>
         
-        <h2><span>📅</span> 10 октября, 2025</h2>
+        <h2><span class="emoji-heading">📅</span> 10 октября, 2025</h2>
         
-        <h3><span>🎁</span> Поздравление с Новым 2026 годом</h3>
+        <h3><span class="emoji-heading">🎁</span> Поздравление с Наступающим 2026 годом</h3>
         <p>Поздравление с Наступающим 2026 годом читайте здесь:</p>
         
-        <a href="#" class="holiday-link" onclick="showNewYearGreeting(event)">
-            <span>🎁</span> Открыть поздравление 👈
+        <a href="#" class="action-link" onclick="showGreeting()">
+            <span class="emoji-heading">🎁</span> Открыть поздравление 👈
         </a>
         
-        <h2><span>📅</span> 15 октября, 2025</h2>
+        <!-- Полностью перенесенный раздел с кроссвордом -->
+        <h2><span class="emoji-heading">📅</span> 15 октября, 2025</h2>
         
-        <h3><span>✏️</span> Новогодние кроссворды</h3>
-        <p>Я сделала Новогодние кроссворды для сайта моего друга</p>
+        <h3><span class="emoji-heading">🦌</span> Новогодние кроссворды</h3>
+        <p>Я сделала Новогодние кроссворды для сайта 👫 сайта моего друга</p>
         
-        <a href="#" class="holiday-link" onclick="showCrosswords(event)">
-            <span>📝</span> Посмотреть готовые кроссворды 👈
-        </a>
+        <div class="crossword-section">
+            <h4>Новогодний кроссворд (Русский)</h4>
+            <div class="crossword-grid" id="russian-crossword">
+                <!-- Кроссворд будет сгенерирован JavaScript -->
+            </div>
+            
+            <div class="crossword-clues">
+                <h5>По горизонтали:</h5>
+                <ol class="clue-list">
+                    <li>Главный зимний праздник (8 букв)</li>
+                    <li>Снежная фигура во дворе (8 букв)</li>
+                    <li>Новогодний напиток (7 букв)</li>
+                    <li>Блестящая нить для украшения ёлки (4 буквы)</li>
+                    <li>Зимнее транспортное средство (5 букв)</li>
+                </ol>
+                
+                <h5 style="margin-top: 20px;">По вертикали:</h5>
+                <ol class="clue-list" start="6">
+                    <li>Подарок под ёлкой (6 букв)</li>
+                    <li>Сказочный дед с мешком (5 букв)</li>
+                    <li>Новогодний фейерверк (5 букв)</li>
+                    <li>Праздничный залп в полночь (5 букв)</li>
+                    <li>Зимнее развлечение детей (6 букв)</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="action-link" onclick="checkCrossword()">
+                    <span class="emoji-heading">✓</span> Проверить ответы
+                </a>
+            </div>
+        </div>
         
-        <h2><span>📅</span> 1 сентября, 2025</h2>
+        <p>
+            <a href="#" class="action-link" onclick="showCrosswords()">
+                <span class="emoji-heading">📝</span> Посмотреть готовые кроссворды 👈
+            </a>
+        </p>
         
-        <h3><span>💡</span> Начало пути</h3>
+        <h2><span class="emoji-heading">📅</span> 1 сентября, 2025</h2>
+        
+        <h3><span class="emoji-heading">💡</span> Начало пути</h3>
         <p>Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.</p>
         
         <blockquote>
@@ -423,135 +384,94 @@
         <div class="contact">
             <p><strong>13 января 2026 года</strong></p>
             <p>Мой сайт: <strong id="site-url">biggrip.github.io/glushkova_1/</strong></p>
-            <p>Свяжитесь со мной через GitHub для совместной работы</p>
-            <a href="#" class="holiday-link" onclick="showContactForm(event)" style="margin-top: 15px;">
-                <span>✉️</span> Написать мне
-            </a>
+            <p><a href="#" onclick="showContact()">Написать мне</a></p>
         </div>
     </div>
 
     <script>
-        // Создаем снежинки
-        function createSnowflakes() {
-            const container = document.getElementById('snowflakes');
-            const flakes = ['❄️', '🎄', '⭐', '🎁', '❄️'];
+        // Создание русского кроссворда
+        function createRussianCrossword() {
+            const grid = document.getElementById('russian-crossword');
+            const letters = [
+                'Н','О','В','Ы','Й',
+                ' ','С','Н','Е','Г',
+                ' ',' ',' ','М',' ',
+                ' ',' ',' ',' ',' ',
+                ' ',' ',' ',' ',' '
+            ];
             
-            for (let i = 0; i < 20; i++) {
-                const flake = document.createElement('div');
-                flake.className = 'snowflake';
-                flake.textContent = flakes[Math.floor(Math.random() * flakes.length)];
-                flake.style.left = Math.random() * 100 + 'vw';
-                flake.style.fontSize = (Math.random() * 20 + 10) + 'px';
-                flake.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                flake.style.animationDelay = Math.random() * 5 + 's';
-                flake.style.opacity = Math.random() * 0.5 + 0.3;
-                container.appendChild(flake);
-            }
-        }
-        
-        // Управление видео
-        const video = document.getElementById('newYearVideo');
-        let isPlaying = false;
-        
-        function playPauseVideo() {
-            const btn = document.querySelector('.video-btn');
+            // Очищаем сетку
+            grid.innerHTML = '';
             
-            if (isPlaying) {
-                video.pause();
-                btn.textContent = '▶️ Воспроизвести';
-            } else {
-                video.play().then(() => {
-                    btn.textContent = '⏸️ Пауза';
-                }).catch(e => {
-                    console.log("Нужно взаимодействие пользователя:", e);
-                    // На мобильных требуется тап
-                    alert('Нажмите на видео, чтобы начать воспроизведение');
-                });
-            }
-            isPlaying = !isPlaying;
-        }
-        
-        function toggleMute() {
-            video.muted = !video.muted;
-            const btns = document.querySelectorAll('.video-btn');
-            btns[1].textContent = video.muted ? '🔇 Без звука' : '🔊 Звук';
-        }
-        
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                video.parentElement.requestFullscreen().catch(err => {
-                    console.log(`Ошибка полноэкранного режима: ${err.message}`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        }
-        
-        function restartVideo() {
-            video.currentTime = 0;
-            if (!isPlaying) {
-                video.play();
-                isPlaying = true;
-                document.querySelector('.video-btn').textContent = '⏸️ Пауза';
-            }
-        }
-        
-        // Автопауза при скролле
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden && isPlaying) {
-                video.pause();
-                document.querySelector('.video-btn').textContent = '▶️ Воспроизвести';
-                isPlaying = false;
-            }
-        });
-        
-        // Праздничные функции
-        function showNewYearGreeting(e) {
-            e.preventDefault();
-            const year = new Date().getFullYear() + 1;
-            alert(`🎉 С НОВЫМ ${year} ГОДОМ! 🎉\n\nПусть новый год принесёт:\n• Здоровье и счастье\n• Успех во всех делах\n• Мир и благополучие\n• Исполнение желаний!\n\nС праздником! 🎄🎁`);
-        }
-        
-        function showCrosswords(e) {
-            e.preventDefault();
-            alert('✏️ НОВОГОДНИЕ КРОССВОРДЫ\n\n🎯 Русская версия:\n1. Снежная баба (8 букв)\n2. Новогодний напиток (7 букв)\n3. Подарок под ёлкой (6 букв)\n\n🎯 English version:\n1. Santa Claus (6 letters)\n2. Christmas tree (9 letters)\n3. New Year gift (6 letters)');
-        }
-        
-        function showContactForm(e) {
-            e.preventDefault();
-            alert('✉️ СВЯЗЬ СО МНОЙ\n\nGitHub: biggrip\nПроект: glushkova_1\n\nДля сотрудничества отправьте сообщение через GitHub!');
-        }
-        
-        // Инициализация
-        document.addEventListener('DOMContentLoaded', () => {
-            createSnowflakes();
+            // Номера для ячеек
+            const numbers = {
+                0: 1,   // Н - Новый год
+                6: 2,   // С - Снеговик
+                13: 4,  // М - Мандарин
+                1: 6,   // О - Подарок
+                2: 7,   // В - Дед Мороз
+                3: 8,   // Ы - Фейерверк
+                4: 9,   // Й - Салют
+                9: 10   // Г - Горка
+            };
             
-            // Автоматически показываем URL сайта
-            const url = window.location.hostname + window.location.pathname;
-            document.getElementById('site-url').textContent = url;
-            
-            // На мобильных делаем кнопки всегда видимыми
-            if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                const controls = document.querySelector('.video-controls');
-                controls.style.opacity = '1';
-                controls.style.background = 'rgba(198, 40, 40, 0.95)';
+            // Создаем 25 ячеек (5x5)
+            for (let i = 0; i < 25; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'crossword-cell';
+                
+                if (letters[i] && letters[i] !== ' ') {
+                    cell.textContent = letters[i];
+                    if (numbers[i]) {
+                        cell.classList.add('numbered');
+                        cell.dataset.number = numbers[i];
+                    }
+                } else if (letters[i] === ' ') {
+                    cell.classList.add('black');
+                    cell.textContent = '';
+                }
+                
+                grid.appendChild(cell);
             }
+        }
+        
+        // Проверка кроссворда
+        function checkCrossword() {
+            alert('🎯 Проверка кроссворда\n\nПравильные ответы:\n1. НОВЫЙГОД\n2. СНЕГОВИК\n3. МАНДАРИН\n4. ГИРЛЯНДА\n5. САНИ\n6. ПОДАРОК\n7. ДЕДМОРОЗ\n8. ФЕЙЕРВЕРК\n9. САЛЮТ\n10. ГОРКА\n\nПродолжайте в том же духе! ✨');
+        }
+        
+        // Функция для показа кроссвордов
+        function showCrosswords() {
+            alert('✏️ Новогодние кроссворды\n\nЗдесь вы найдете различные кроссворды на новогоднюю тематику как на русском, так и на английском языке.\n\nСкоро появятся новые головоломки! 🎄');
+        }
+        
+        // Функция для показа поздравления
+        function showGreeting() {
+            alert('🎉 С Наступающим 2026 годом! 🎉\n\nПусть новый год принесет вам:\n• Счастье и здоровье\n• Успех в делах\n• Мир и благополучие\n• Исполнение желаний!\n\nС праздником! 🎄🎁');
+        }
+        
+        // Функция для контакта
+        function showContact() {
+            alert('✉️ Написать мне\n\nВы можете связаться со мной через GitHub или по электронной почте.\n\nGitHub: biggrip\nПроект: glushkova_1');
+        }
+        
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            createRussianCrossword();
             
-            // Автозапуск при клике на видео (для мобильных)
-            video.addEventListener('click', () => {
-                if (!isPlaying) {
-                    playPauseVideo();
+            // Обновляем URL сайта
+            const siteUrl = window.location.hostname + window.location.pathname.replace(/\/$/, '');
+            document.getElementById('site-url').textContent = siteUrl;
+            
+            // Добавляем интерактивность ячейкам кроссворда
+            document.querySelectorAll('.crossword-cell').forEach(cell => {
+                if (!cell.classList.contains('black')) {
+                    cell.addEventListener('click', function() {
+                        this.style.background = '#4299e1';
+                        this.style.color = 'white';
+                    });
                 }
             });
-        });
-        
-        // Обработка ошибок видео
-        video.addEventListener('error', (e) => {
-            console.error('Ошибка видео:', e);
-            const note = document.querySelector('.video-note');
-            note.innerHTML = '⚠️ Видео не загружено. Убедитесь, что файл "Новый год.MP4" загружен в репозиторий GitHub.';
-            note.style.color = '#c62828';
-            note.style.background = '#ffebee';
         });
     </script>
 </body>
