@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой первый сайт</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f0f0f0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            margin: 20px 0 10px 0;
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .date {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .quote {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin: 20px 0;
+            color: #555;
+            font-style: italic;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Мой первый сайт в интернете</h1>
+        
+        <span class="date">17 января, 2026</span>
+        <h2>Сайт опубликован</h2>
+        <p>Сегодня я опубликовал свой первый сайт в интернете с помощью GitHub Pages. Это начало моего пути в веб-разработку.</p>
+        
+        <div class="quote">
+            "Путешествие в тысячу миль начинается с одного шага"<br>
+            — Лао Цзы
+        </div>
+        
+        <p>Я научился основам HTML и CSS, работе с GitHub и публикации сайтов.</p>
+        
+        <span class="date">15 января, 2026</span>
+        <h2>Планы на будущее</h2>
+        <p>В ближайшее время планирую:</p>
+        <ul>
+            <li>Изучить JavaScript</li>
+            <li>Создать интерактивные элементы</li>
+            <li>Добавить новые страницы на сайт</li>
+        </ul>
+        
+        <span class="date">10 января, 2026</span>
+        <h2>Полезные ресурсы</h2>
+        <p>Что помогло мне создать этот сайт:</p>
+        <ul>
+            <li><a href="https://pages.github.com/">GitHub Pages</a> - бесплатный хостинг для сайтов</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML">MDN Web Docs</a> - документация по HTML</li>
+        </ul>
+        
+        <h3>Контактная информация</h3>
+        <p>Мой сайт: <strong id="site-url">ваш-логин.github.io</strong></p>
+        <p>Связь через GitHub.</p>
+        
+        <p style="margin-top: 30px; color: #7f8c8d; font-size: 14px;">
+            © 2026 Мой первый сайт. Создано с помощью GitHub Pages.
+        </p>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.querySelector('p:last-of-type');
+            if (yearElement) {
+                yearElement.innerHTML = yearElement.innerHTML.replace('2026', currentYear);
+            }
+            
+            const siteUrl = window.location.hostname;
+            document.getElementById('site-url').textContent = siteUrl;
+        });
+    </script>
+</body>
+</html>
